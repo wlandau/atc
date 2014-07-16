@@ -1,9 +1,8 @@
 #editor {
   font-size: 1em;
   height: 100%;
-  border: 0.1em solid black;
-  border-top: none;
-  outline: none;
+  margin-top: 0.05em;
+  outline: 0.1em solid black;
   padding: 0.5em;
   resize: none;
   width: 100%;
