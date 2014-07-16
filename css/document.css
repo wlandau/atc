@@ -4,21 +4,21 @@
   box-sizing: border-box;
   font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
-.atc, body, html {
+.atc, .content, body, html {
   height: 100%;
 }
 .content {
-  padding-top: 2em;
-  margin-top: -2em;
-  height: 100%;
+  margin-top: -1.5em;
+  padding-top: 1.5em;
 }
 .header {
   background: LightGray;
-  height: 2em;
+  border: 0.1em solid black;
+  height: 1.5em;
 }
 .header div {
   float: left;
-  line-height: 2em;
+  line-height: 1.5em;
   text-align: center;
 }
 .header div:active {
@@ -33,5 +33,5 @@
 body {
   font-size: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
 }
