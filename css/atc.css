@@ -1,0 +1,19 @@
+.atc > .header div {
+  width: 20%;
+}
+
+.toggle-editor:before {
+  content: "Editor";
+}
+.toggle-ledger:before {
+  content: "Ledger";
+}
+.toggle-summary:before {
+  content: "Summary";
+}
+.toggle-settings:before {
+  content: "Settings";
+}
+.toggle-help:before {
+  content: "Help";
+}

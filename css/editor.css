@@ -1,0 +1,24 @@
+#editor {
+  border-bottom: 0.25em solid LightGray;
+  border-left: 0.25em solid LightGray;
+  border-right: 0.25em solid LightGray;
+  border-top: none;
+  font-size: 1em;
+  height: 100%;
+  margin: 0;
+  outline: none;
+  padding: 0.5em;
+  resize: none;
+  width: 100%;
+}
+
+.editor > .header div {
+  width: 50%;
+}
+
+.merge:before {
+  content: "Merge";
+}
+.clean:before {
+  content: "Clean";
+}
