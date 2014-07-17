@@ -28,6 +28,9 @@
   padding: 1em;
   width: 100%;
 }
+.panels {
+  border-top: 0.1em solid black;
+}
 body {
   font-size: 100%;
   margin: 0;
