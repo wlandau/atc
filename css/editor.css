@@ -1,9 +1,9 @@
 #editor {
+  border: 0.1em solid black;
   font-size: 1em;
   height: 100%;
-  margin-top: 0.05em;
-  outline: 0.1em solid black;
-  padding: 0.5em;
+  outline: none;
+  padding: 1em;
   resize: none;
   width: 100%;
 }
@@ -16,5 +16,5 @@
   content: "Clean";
 }
 .merge:before {
-  content: "Merge";
+  content: "Merge selection";
 }

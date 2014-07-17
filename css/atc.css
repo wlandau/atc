@@ -1,7 +1,10 @@
+.atc > .header {
+  background: LightGray;
+  outline: 0.1em solid black;
+}
 .atc > .header div {
   width: 20%;
 }
-
 .toggle-editor:before {
   content: "Editor";
 }
