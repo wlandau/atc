@@ -3,17 +3,24 @@
   font-size: 1em;
   height: 100%;
   outline: none;
+  overflow-y: scroll;
   padding: 1em;
   resize: none;
   width: 100%;
 }
 
+.editor > .header {
+  background: LightGray;
+}
 .editor > .header div {
   width: 50%;
 }
+.editor > .header div:active {
+   background: gray;
+}
 
-.clean:before {
-  content: "Clean";
+.condense:before {
+  content: "Condense all";
 }
 .merge:before {
   content: "Merge selection";
