@@ -1,0 +1,21 @@
+* {
+  font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
+}
+.below-header > div {
+  border: 0.1em solid black;
+}
+.header {
+  border-left: 0.1em solid black;
+  border-right: 0.1em solid black;
+}
+.header div {
+  background: #eee;
+  border-top: 0.1em solid black;
+}
+.header div:active {
+  background: gold;
+}
+
+#editor {
+  outline: none;
+}

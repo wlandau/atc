@@ -1,6 +1,5 @@
-.atc > .header div {
-  width: 20%;
-}
+/* atc */
+
 .toggle-editor:before {
   content: "Editor";
 }
@@ -15,4 +14,13 @@
 }
 .toggle-help:before {
   content: "Help";
+}
+
+/* editor */
+
+.condense:before {
+  content: "Condense all";
+}
+.merge:before {
+  content: "Merge selection";
 }

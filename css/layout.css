@@ -1,8 +1,9 @@
+/* general */
+
 * {
   -moz-box-sizing: border-box; 
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
-  font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
 .atc, .below-header, .panels, body, html {
   height: 100%;
@@ -11,18 +12,8 @@
   margin-top: -1.5em;
   padding-top: 1.5em;
 }
-.below-header > div {
-  border: 0.1em solid black;
-}
-.header {
-  border-left: 0.1em solid black;
-  border-right: 0.1em solid black;
-}
 .header div {
-  height: 1.5em;
-  line-height: 1.4em;
-  background: #eeeeee;
-  border-top: 0.1em solid black;
+  line-height: 1.5em;
   float: left;
   overflow: hidden;
   text-align: center;
@@ -32,17 +23,32 @@
 .header, .header div {
   height: 1.5em;
 }
-.header div:active {
-  background: gray;
-}
 .panel {
   float: left;
   height: 100%;
   padding: 1em;
   width: 100%;
 }
-
 body {
   font-size: 100%;
   margin: 0;
+}
+
+/* header field widths */
+
+.atc > .header div {
+  width: 20%;
+}
+.editor > .header div {
+  width: 50%;
+}
+
+/* editor */
+
+#editor {
+  height: 100%;
+  overflow-y: scroll;
+  padding: 1em;
+  resize: none;
+  width: 100%;
 }
