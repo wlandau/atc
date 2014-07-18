@@ -1,5 +1,4 @@
 #editor {
-  border: 0.1em solid black;
   font-size: 1em;
   height: 100%;
   outline: none;
@@ -9,15 +8,10 @@
   width: 100%;
 }
 
-.editor > .header {
-  background: LightGray;
-}
 .editor > .header div {
   width: 50%;
 }
-.editor > .header div:active {
-   background: gray;
-}
+
 
 .condense:before {
   content: "Condense all";

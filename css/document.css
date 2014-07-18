@@ -11,16 +11,29 @@
   margin-top: -1.5em;
   padding-top: 1.5em;
 }
+.below-header > div {
+  border: 0.1em solid black;
+}
 .header {
-  height: 1.5em;
-  line-height: 1.5em;
+  border-left: 0.1em solid black;
+  border-right: 0.1em solid black;
 }
 .header div {
+  height: 1.5em;
+  line-height: 1.4em;
+  background: #eeeeee;
+  border-top: 0.1em solid black;
   float: left;
   overflow: hidden;
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.header, .header div {
+  height: 1.5em;
+}
+.header div:active {
+  background: gray;
 }
 .panel {
   float: left;
@@ -28,9 +41,7 @@
   padding: 1em;
   width: 100%;
 }
-.panels {
-  border-top: 0.1em solid black;
-}
+
 body {
   font-size: 100%;
   margin: 0;

@@ -1,11 +1,5 @@
-.atc > .header {
-  background: LightGray;
-}
 .atc > .header div {
   width: 20%;
-}
-.atc > .header div:active {
-   background: gray;
 }
 .toggle-editor:before {
   content: "Editor";
