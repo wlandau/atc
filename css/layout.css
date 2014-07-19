@@ -5,7 +5,7 @@
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
-.atc, .below-header, .panels, .window, body, html {
+.atc, .below-header, .window, body, html {
   height: 100%;
 }
 .below-header {
@@ -24,6 +24,8 @@
 }
 .panel {
   float: left;
+  width: 100%;
+  height: 100%;
 }
 .panel, .window {
   padding: 1em;
@@ -54,18 +56,17 @@ body {
 
 /* header text placement */
 
-.header div {
-  padding-left: 1em;
-}
-.header div:last-child {
-  padding-right: 1em;
-}
 .atc > .header div, .editor .header div {
-  padding: 0;
   text-align: center;
 }
-.summary .header div, .header .totals {
+.ledger .header .totals, .summary .header div:not(.accounts):not(.funds) {
   text-align: right;
+}
+.panel:not(.editor) .header div {
+  padding-left: 1em;
+}
+.panel:not(.editor) .header div:last-child {
+  padding-right: 1em;
 }
 .summary .header .accounts, .summary .header .funds {
   text-align: left;
