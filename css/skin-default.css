@@ -1,21 +1,47 @@
+/* general */
+
 * {
   font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
-.below-header > div {
+.window {
   border: 0.1em solid black;
+  outline: none;
 }
-.header {
-  border-left: 0.1em solid black;
-  border-right: 0.1em solid black;
-}
-.header div {
+
+/* atc header */
+
+.atc > .header div {
   background: #eee;
-  border-top: 0.1em solid black;
+  border-bottom: 0.1em solid black;
 }
-.header div:active {
+.atc > .header div:active {
   background: gold;
 }
 
-#editor {
-  outline: none;
+/* editor header */
+
+.editor .header {
+  border-left: 0.1em solid black;
+  border-right: 0.1em solid black;
+}
+.editor .header div {
+  background: #eee;
+  border-top: 0.1em solid black;
+}
+.editor .header div:active {
+  background: gold;
+}
+
+/* summary header */
+
+.summary .header {
+  border-left: 0.1em solid black;
+  border-right: 0.1em solid black;
+}
+.summary .header div {
+  background: #eee;
+  border-top: 0.1em solid black;
+}
+.summary .header:active div {
+  background: gold;
 }

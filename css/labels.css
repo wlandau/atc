@@ -1,18 +1,18 @@
 /* atc */
 
-.toggle-editor:before {
+.atc > .header .editor:before {
   content: "Editor";
 }
-.toggle-ledger:before {
+.atc > .header .ledger:before {
   content: "Ledger";
 }
-.toggle-summary:before {
+.atc > .header .summary:before {
   content: "Summary";
 }
-.toggle-settings:before {
+.atc > .header .settings:before {
   content: "Settings";
 }
-.toggle-help:before {
+.atc > .header .help:before {
   content: "Help";
 }
 
@@ -23,4 +23,49 @@
 }
 .merge:before {
   content: "Merge selection";
+}
+
+/* ledger */
+
+.header .accounts:before {
+  content: "Accounts";
+}
+.header .funds:before {
+  content: "Funds";
+}
+.header .memos:before {
+  content: "Memos";
+}
+.header .totals:before {
+  content: "0.00";
+}
+
+/* summary */
+
+.header .waiting:before {
+  content: "Waiting";
+}
+.header .pending:before {
+  content: "Pending";
+}
+.header .cleared:before {
+  content: "Cleared";
+}
+.header .future:before {
+  content: "Future";
+}
+.header .safe:before {
+  content: "Safe";
+}
+
+/* settings */
+
+.settings .header .settings:before {
+  content: "Settings";
+}
+
+/* help */
+
+.help .header .help:before {
+  content: "Help";
 }

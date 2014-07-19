@@ -5,29 +5,32 @@
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
-.atc, .below-header, .panels, body, html {
+.atc, .below-header, .panels, .window, body, html {
   height: 100%;
 }
 .below-header {
   margin-top: -1.5em;
   padding-top: 1.5em;
 }
+.header, .header div {
+  height: 1.5em;
+}
 .header div {
   line-height: 1.5em;
   float: left;
   overflow: hidden;
-  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.header, .header div {
-  height: 1.5em;
-}
 .panel {
   float: left;
-  height: 100%;
+}
+.panel, .window {
   padding: 1em;
+}
+.window {
   width: 100%;
+  overflow-y: scroll;
 }
 body {
   font-size: 100%;
@@ -39,16 +42,37 @@ body {
 .atc > .header div {
   width: 20%;
 }
-.editor > .header div {
+.editor .header div {
   width: 50%;
+}
+.ledger .header div {
+  width: 25%;
+}
+.summary .header div {
+  width: 14.28%;
+}
+
+/* header text placement */
+
+.header div {
+  padding-left: 1em;
+}
+.header div:last-child {
+  padding-right: 1em;
+}
+.atc > .header div, .editor .header div {
+  padding: 0;
+  text-align: center;
+}
+.summary .header div, .header .totals {
+  text-align: right;
+}
+.summary .header .accounts, .summary .header .funds {
+  text-align: left;
 }
 
 /* editor */
 
-#editor {
-  height: 100%;
-  overflow-y: scroll;
-  padding: 1em;
+.editor .window {
   resize: none;
-  width: 100%;
 }
