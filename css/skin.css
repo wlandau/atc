@@ -3,11 +3,8 @@
 * {
   font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
-.header {
-  color: white;
-}
 .header div {
-  background: black;
+  background: LightGray;
 }
 .window {
   border: 0.1em solid black;
@@ -34,5 +31,5 @@
 
 .atc > .header .open:not(:active), .atc > .header div:not(.open):active, 
 .editor .header div:active, .summary .header:active div {
-  background: blue;
+  background: LightBlue;
 }
