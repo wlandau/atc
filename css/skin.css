@@ -31,5 +31,5 @@
 
 .atc > .header .open:not(:active), .atc > .header div:not(.open):active, 
 .editor .header div:active, .summary .header:active div {
-  background: LightBlue;
+  background: #8888ff;
 }
