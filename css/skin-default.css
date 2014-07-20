@@ -3,6 +3,9 @@
 * {
   font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
+.atc > .header div, .atc > .header .open:active, .panel .header div {
+  background: LightGray;
+}
 .window {
   border: 0.1em solid black;
   outline: none;
@@ -13,9 +16,6 @@
 .atc > .header div {
   border-bottom: 0.1em solid black;
 }
-.atc > .header div, .atc > .header .open:active {
-  background: #eee;
-}
 
 /* panel headers */
 
@@ -24,12 +24,11 @@
   border-right: 0.1em solid black;
 }
 .panel .header div {
-  background: #eee;
   border-top: 0.1em solid black;
 }
   
 /* header buttons */
 
 .atc > .header .open, .atc > .header div:not(.open):active, .editor .header div:active, .summary .header:active div {
-  background: LightBlue;
+  background: blue;
 }
