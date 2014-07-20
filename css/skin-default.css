@@ -3,8 +3,11 @@
 * {
   font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
 }
-.atc > .header div, .atc > .header .open:active, .panel .header div {
-  background: LightGray;
+.header {
+  color: white;
+}
+.header div {
+  background: black;
 }
 .window {
   border: 0.1em solid black;
@@ -29,6 +32,7 @@
   
 /* header buttons */
 
-.atc > .header .open, .atc > .header div:not(.open):active, .editor .header div:active, .summary .header:active div {
+.atc > .header .open:not(:active), .atc > .header div:not(.open):active, 
+.editor .header div:active, .summary .header:active div {
   background: blue;
 }
