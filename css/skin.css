@@ -1,0 +1,38 @@
+/* general */
+
+* {
+  font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
+}
+.header {
+  color: white;
+}
+.header div {
+  background: black;
+}
+.window {
+  border: 0.1em solid black;
+  outline: none;
+}
+
+/* atc header */
+
+.atc > .header div {
+  border-bottom: 0.1em solid black;
+}
+
+/* panel headers */
+
+.panel .header {
+  border-left: 0.1em solid black;
+  border-right: 0.1em solid black;
+}
+.panel .header div {
+  border-top: 0.1em solid black;
+}
+  
+/* header buttons */
+
+.atc > .header .open:not(:active), .atc > .header div:not(.open):active, 
+.editor .header div:active, .summary .header:active div {
+  background: blue;
+}
