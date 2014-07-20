@@ -51,6 +51,9 @@ body {
 .ledger .header div {
   width: 25%;
 }
+.settings .header div, .help .header div {
+  width: 100%;
+}
 .summary .header div {
   width: 14.28%;
 }

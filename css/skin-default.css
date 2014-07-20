@@ -11,37 +11,25 @@
 /* atc header */
 
 .atc > .header div {
-  background: #eee;
   border-bottom: 0.1em solid black;
 }
-.atc > .header .open {
-  background: gold;
+.atc > .header div, .atc > .header .open:active {
+  background: #eee;
 }
 
-/* editor header */
+/* panel headers */
 
-.editor .header {
+.panel .header {
   border-left: 0.1em solid black;
   border-right: 0.1em solid black;
 }
-.editor .header div {
+.panel .header div {
   background: #eee;
   border-top: 0.1em solid black;
 }
-.editor .header div:active {
-  background: gold;
-}
+  
+/* header buttons */
 
-/* summary header */
-
-.summary .header {
-  border-left: 0.1em solid black;
-  border-right: 0.1em solid black;
-}
-.summary .header div {
-  background: #eee;
-  border-top: 0.1em solid black;
-}
-.summary .header:active div {
-  background: gold;
+.atc > .header .open, .atc > .header div:not(.open):active, .editor .header div:active, .summary .header:active div {
+  background: LightBlue;
 }
