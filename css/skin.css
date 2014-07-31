@@ -9,41 +9,45 @@
   outline: none;
 }
 
+html{
+  background: #ccc;
+}
+
 /* colors */
 
-.atc > .header div, html, .editor .header div:active, .summary .header:active div {
-  color: black;
-  background: #ccc;
+.atc > .header div, .editor .header div:active, .summary .header:active div {
+  color: white;
+  background: #666;
 }
   
 /* header color palette */
 
 .atc > .header .editor.open:not(:active), .atc > .header .editor:not(.open):active,
 .editor > .header {
-  background: #003366;
+  background: #369;
   color: white;
 }
 
 .atc > .header .ledger.open:not(:active), .atc > .header .ledger:not(.open):active,
 .ledger > .header {
-  background: #663300;
+  background: #963;
   color: white;
 }
 
 .atc > .header .summary.open:not(:active), .atc > .header .summary:not(.open):active,
 .summary > .header {
-  background: #006633;
+  background: #396;
   color: white;
 }
 
 .atc > .header .settings.open:not(:active), .atc > .header .settings:not(.open):active,
 .settings > .header {
-  background: #330066;
+  background: #639;
   color: white;
 }
 
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
-  background: #660033;
+  background: #936;
   color: white;
 }
