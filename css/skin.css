@@ -5,19 +5,27 @@
 }
 
 .window {
-  background: white;
+
   outline: none;
 }
 
-html{
-  background: #ccc;
-}
 
 /* colors */
 
 .atc > .header div, .editor .header div:active, .summary .header:active div {
-  color: white;
   background: #666;
+}
+
+.header {
+  color: white;
+}
+
+.window {
+  background: white;
+}
+
+html{
+  background: #ccc;
 }
   
 /* header color palette */
@@ -25,29 +33,24 @@ html{
 .atc > .header .editor.open:not(:active), .atc > .header .editor:not(.open):active,
 .editor > .header {
   background: #369;
-  color: white;
 }
 
 .atc > .header .ledger.open:not(:active), .atc > .header .ledger:not(.open):active,
 .ledger > .header {
   background: #963;
-  color: white;
 }
 
 .atc > .header .summary.open:not(:active), .atc > .header .summary:not(.open):active,
 .summary > .header {
   background: #396;
-  color: white;
 }
 
 .atc > .header .settings.open:not(:active), .atc > .header .settings:not(.open):active,
 .settings > .header {
   background: #639;
-  color: white;
 }
 
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
   background: #936;
-  color: white;
 }
