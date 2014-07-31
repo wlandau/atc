@@ -1,35 +1,49 @@
 /* general */
 
 * {
-  font-family: Monaco,  monospace, "Lucida Console", Courier, "Courier New";
+  font-family: "Comic Sans MS", sans-serif;
 }
-.header div {
-  background: LightGray;
-}
+
 .window {
-  border: 0.1em solid black;
+  background: white;
   outline: none;
 }
 
-/* atc header */
+/* color palettes */
 
-.atc > .header div {
-  border-bottom: 0.1em solid black;
-}
-
-/* panel headers */
-
-.panel .header {
-  border-left: 0.1em solid black;
-  border-right: 0.1em solid black;
-}
-.panel .header div {
-  border-top: 0.1em solid black;
+.atc > .header div, html, .editor .header div:active, .summary .header:active div {
+  color: black;
+  background: #ccc;
 }
   
-/* header buttons */
+/* header color palette */
 
-.atc > .header .open:not(:active), .atc > .header div:not(.open):active, 
-.editor .header div:active, .summary .header:active div {
-  background: #8888ff;
+.atc > .header .editor.open:not(:active), .atc > .header .editor:not(.open):active,
+.editor > .header {
+  background: #003366;
+  color: white;
+}
+
+.atc > .header .ledger.open:not(:active), .atc > .header .ledger:not(.open):active,
+.ledger > .header {
+  background: #663300;
+  color: white;
+}
+
+.atc > .header .summary.open:not(:active), .atc > .header .summary:not(.open):active,
+.summary > .header {
+  background: #006633;
+  color: white;
+}
+
+.atc > .header .settings.open:not(:active), .atc > .header .settings:not(.open):active,
+.settings > .header {
+  background: #330066;
+  color: white;
+}
+
+.atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
+.help > .header {
+  background: #660033;
+  color: white;
 }
