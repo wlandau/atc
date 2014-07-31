@@ -15,15 +15,12 @@
 .atc > .header div, .editor .header div:active, .summary .header:active div {
   background: #666;
 }
-
 .header {
   color: white;
 }
-
 .window {
-  background: white;
+  background: #fff;
 }
-
 html{
   background: #ccc;
 }
