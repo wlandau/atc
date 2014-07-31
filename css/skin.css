@@ -59,8 +59,8 @@
 /* saving */
 
 .save {
-  background: #600;
+  background: #960;
 }
 .save:active, .saving {
-  background: #960;
+  background: #906;
 }
