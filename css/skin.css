@@ -40,7 +40,7 @@
 
 .atc > .header .summary.open:not(:active), .atc > .header .summary:not(.open):active,
 .summary > .header {
-  background: #063;
+  background: #333;
   color: white;
 }
 
@@ -52,7 +52,7 @@
 
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
-  background: #333;
+  background: #063;
   color: white;
 }
 
@@ -62,5 +62,5 @@
   background: #930;
 }
 .save:active, .saving {
-  background: #960;
+  background: #963;
 }
