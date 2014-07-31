@@ -12,7 +12,8 @@
 
 /* colors */
 
-.atc > .header div, .editor .header div:active, .summary .header:active div {
+.atc > .header div, .editor .header div:not(.save):not(.saving):not(.saved):active, 
+.summary .header:active div {
   background: #666;
 }
 .header {
@@ -50,4 +51,16 @@ html{
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
   background: #936;
+}
+
+/* saving */
+
+.save {
+  background: #963;
+}
+.save:active, .saving {
+  background: #396;
+}
+.saved {
+  background: #369;
 }

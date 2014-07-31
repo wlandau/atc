@@ -24,6 +24,15 @@
 .merge:before {
   content: "Merge selection";
 }
+.save:before {
+  content: "Save";
+}
+.saved:before {
+  content: "Saved";
+}
+.saving:before {
+  content: "Saving...";
+}
 
 /* ledger */
 
