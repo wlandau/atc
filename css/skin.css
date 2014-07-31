@@ -28,38 +28,38 @@
 
 .atc > .header .editor.open:not(:active), .atc > .header .editor:not(.open):active,
 .editor > .header {
-  background: #006;
+  background: #069;
   color: white;
 }
 
 .atc > .header .ledger.open:not(:active), .atc > .header .ledger:not(.open):active,
 .ledger > .header {
-  background: #069;
+  background: #006;
   color: white;
 }
 
 .atc > .header .summary.open:not(:active), .atc > .header .summary:not(.open):active,
 .summary > .header {
-  background: #033;
+  background: #096;
   color: white;
 }
 
 .atc > .header .settings.open:not(:active), .atc > .header .settings:not(.open):active,
 .settings > .header {
-  background: #096;
+  background: #060;
   color: white;
 }
 
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
-  background: #060;
+  background: #777;
   color: white;
 }
 
 /* saving */
 
 .save {
-  background: #960;
+  background: #600;
 }
 .save:active, .saving {
   background: #906;
