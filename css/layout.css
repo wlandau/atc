@@ -5,6 +5,9 @@
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
+.atc, .header div {
+  overflow: hidden;
+}
 .atc, .below-header, .window, body, html {
   height: 100%;
 }
@@ -18,7 +21,6 @@
 .header div {
   line-height: 2em;
   float: left;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
