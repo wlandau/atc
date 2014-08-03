@@ -15,7 +15,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div:not(.save):not(.saving):not(.saved):active, 
+.atc > .header div, .editor .header div:active, 
 .summary .header:active div {
   background: #ccc;
   color: black;
@@ -54,13 +54,4 @@
 .help > .header {
   background: #777;
   color: white;
-}
-
-/* saving */
-
-.save {
-  background: #960;
-}
-.save:active, .saving {
-  background: #906;
 }
