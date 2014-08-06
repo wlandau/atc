@@ -1,4 +1,5 @@
 $(document).ready(function(){
   atc = new ATC();
-  atc.display();
+  atc.panels();
+  atc.runAce();
 });

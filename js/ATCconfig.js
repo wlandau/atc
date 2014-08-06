@@ -1,3 +1,3 @@
-ATCconfig = function(display){
-  this.display = display || new ATCconfigDisplay();
+ATCconfig = function(panels){
+  this.panels = panels || new ATCpanels();
 };

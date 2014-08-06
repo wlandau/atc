@@ -1,16 +1,16 @@
 ;(function(){
-  var changeDisplayOnClick = function(cfg){
+  var changePanelsOnClick = function(cfg){
     $(".atc > .header div").click(function(){
       var This = $(this);
       This.toggleClass("open");
       var panelClass = This.attr("class").replace("open", "").trim(),
           panel = $(".panel." + panelClass).toggleClass("open");
-      cfg.display[panelClass] = panel.is(".open");
-      fitDisplay();
+      cfg.panels[panelClass] = panel.is(".open");
+      fitPanels();
     });
   };
   
-  var fitDisplay = function(){
+  var fitPanels = function(){
     var openPanels = $(".open.panel"),
       numOpenPanels  = openPanels.length,
       wide = 2 * $(window).width() > window.screen.availWidth;
@@ -21,23 +21,23 @@
     });
   }; 
   
-  var fitDisplayOnResize = function(){
+  var fitPanelsOnResize = function(){
     $(window).resize(function(){
-      fitDisplay();
+      fitPanels();
     });
   };
   
-  var initializeDisplay = function(cfg){
+  var initializePanels = function(cfg){
     $(".atc > .header div, .panel").removeClass("open");
-    for(panel in cfg.display)
-      if(cfg.display[panel])
+    for(panel in cfg.panels)
+      if(cfg.panels[panel])
         $(".atc > .header ." + panel + ", .panel." + panel).addClass("open");
-    fitDisplay();
+    fitPanels();
   };
   
-  ATC.prototype.display = function(){
-    changeDisplayOnClick(this.cfg);
-    fitDisplayOnResize();
-    initializeDisplay(this.cfg);
+  ATC.prototype.panels = function(){
+    changePanelsOnClick(this.cfg);
+    fitPanelsOnResize();
+    initializePanels(this.cfg);
   };
 })();
