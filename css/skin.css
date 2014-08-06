@@ -1,7 +1,10 @@
 /* general */
 
 * {
-  font-family: "Century Gothic", "Optima", "Trebuchet MS", "Verdana", "Comic Sans MS", Helvetica, sans-serif, Arial;
+  font-family: "Century Gothic", "Optima", "Trebuchet MS", "Verdana", "Comic Sans MS", Helvetica, sans-serif, Arial;  
+}
+#editor, #editor div {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace;
 }
 
 /* colors */

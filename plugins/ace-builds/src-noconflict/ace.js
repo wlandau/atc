@@ -14298,8 +14298,6 @@ var EventEmitter = require("./lib/event_emitter").EventEmitter;
 var editorCss = ".ace_editor {\
 position: relative;\
 overflow: hidden;\
-font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;\
-font-size: 12px;\
 line-height: normal;\
 direction: ltr;\
 }\
@@ -14364,8 +14362,7 @@ right: 0;\
 box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;\
 }\
 .ace_gutter-cell {\
-padding-left: 19px;\
-padding-right: 6px;\
+padding-left: 0.5em; \
 background-repeat: no-repeat;\
 }\
 .ace_gutter-cell.ace_error {\
