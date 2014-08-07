@@ -56,13 +56,13 @@
 /* syntax highlighting */
 
 .ace_waiting {
-  color: #f0a;
+  color: #fc0;
 }
 .ace_pending {
-  color: #fa0;
+  color: #c90;
 }
 .ace_cleared {
-  color: #00f;
+  color: #960;
 }
 .ace_passed {
   color: #aaa;
