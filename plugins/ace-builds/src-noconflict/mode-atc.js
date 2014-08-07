@@ -3,32 +3,42 @@ ace.define('ace/mode/atc', function(require, exports, module) {
 var oop = require("ace/lib/oop");
 var TextMode = require("ace/mode/text").Mode;
 var Tokenizer = require("ace/tokenizer").Tokenizer;
-var ExampleHighlightRules = require("ace/mode/atc_highlight_rules").ExampleHighlightRules;
-
+var atcHighlightRules = require("ace/mode/atc_highlight_rules").atcHighlightRules;
 var Mode = function() {
-  this.$tokenizer = new Tokenizer(new ExampleHighlightRules().getRules());
+  this.$tokenizer = new Tokenizer(new atcHighlightRules().getRules());
 };
 oop.inherits(Mode, TextMode);
-
-(function() {
-    // Extra logic goes here. (see below)
-}).call(Mode.prototype);
-
 exports.Mode = Mode;
 });
 
 ace.define('ace/mode/atc_highlight_rules', function(require, exports, module) {
-
 var oop = require("ace/lib/oop");
 var TextHighlightRules = require("ace/mode/text_highlight_rules").TextHighlightRules;
 
-var ExampleHighlightRules = function() {
-
-    this.$rules = new TextHighlightRules().getRules();
-
+var atcHighlightRules = function() {
+  this.$rules = /* new TextHighlightRules().getRules(); */
+  {
+    "start": [
+      {
+        token: "waiting",
+        regex: "waiting"
+      },
+      {
+        token: "pending",
+        regex: "pending"
+      },
+      {
+        token: "cleared",
+        regex: "cleared"
+      },
+      {
+        token: "passed",
+        regex: "passed"
+      }
+    ]
+  };
 }
 
-oop.inherits(ExampleHighlightRules, TextHighlightRules);
-
-exports.ExampleHighlightRules = ExampleHighlightRules;
+oop.inherits(atcHighlightRules, TextHighlightRules);
+exports.atcHighlightRules = atcHighlightRules;
 });

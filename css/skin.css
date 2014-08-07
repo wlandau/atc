@@ -3,7 +3,7 @@
 * {
   font-family: "Century Gothic", "Optima", "Trebuchet MS", "Verdana", "Comic Sans MS", Helvetica, sans-serif, Arial;  
 }
-#editor, #editor div {
+#editor, #editor * {
   font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace;
 }
 
@@ -51,4 +51,19 @@
 .help > .header {
   background: #777;
   color: white;
+}
+
+/* syntax highlighting */
+
+.ace_waiting {
+  color: #f0a;
+}
+.ace_pending {
+  color: #fa0;
+}
+.ace_cleared {
+  color: #00f;
+}
+.ace_passed {
+  color: #aaa;
 }
