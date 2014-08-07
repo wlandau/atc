@@ -19,6 +19,9 @@
       width: wide && numOpenPanels > 1 ? "50%" : "100%",
       height: numOpenPanels === 1 ? "100%" : (100/(wide ? Math.floor(numOpenPanels/2) + numOpenPanels % 2: numOpenPanels)).toFixed() + "%"
     });
+    
+    if($(".editor").is(".open"))
+      ace.edit("editor").resize();
   }; 
   
   var fitPanelsOnResize = function(){
