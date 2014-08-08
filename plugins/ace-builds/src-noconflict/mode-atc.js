@@ -21,19 +21,19 @@ var atcHighlightRules = function() {
     "start": [
       {
         token: "waiting",
-        regex: "waiting"
+        regex: /\b([Ww][Aa][Ii][Tt][Ii][Nn][Gg]|[Ww][Aa][Ii][Tt]|[Ww])\b/
       },
       {
         token: "pending",
-        regex: "pending"
+        regex: /\b([Pp][Ee][Nn][Dd][Ii][Nn][Gg]|[Pp][Ee][Nn][Dd]|[Pp])\b/
       },
       {
         token: "cleared",
-        regex: "cleared"
+        regex: /\b([Cc][Ll][Ee][Aa][Rr][Ee][Dd]|[Cc][Ll][Ee][Aa][Rr]|[Cc])\b/
       },
       {
         token: "passed",
-        regex: "passed"
+        regex: /\b([Pp][Aa][Ss][Ss][Ee][Dd]|[Pp][Aa][Ss][Ss]|[Ss])\b/
       }
     ]
   };

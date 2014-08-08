@@ -14362,7 +14362,7 @@ right: 0;\
 box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;\
 }\
 .ace_gutter-cell {\
-padding-left: 0.5em; \
+padding: 0 0.5em 0 0.5em; \
 background-repeat: no-repeat;\
 }\
 .ace_gutter-cell.ace_error {\
@@ -14567,9 +14567,6 @@ font-style: normal;\
 font-weight: normal;\
 letter-spacing: normal;\
 pointer-events: none;\
-}\
-.ace_folding-enabled > .ace_gutter-cell {\
-padding-right: 13px;\
 }\
 .ace_fold-widget {\
 -moz-box-sizing: border-box;\
