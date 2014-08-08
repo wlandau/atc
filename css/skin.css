@@ -55,15 +55,15 @@
 
 /* syntax highlighting */
 
-.ace_waiting {
+.ace_wait {
   color: #a0a;
 }
-.ace_pending {
+.ace_pend {
   color: #aa0;
 }
-.ace_cleared {
+.ace_clear {
   color: #0aa;
 }
-.ace_passed {
+.ace_pass {
   color: #aaa;
 }
