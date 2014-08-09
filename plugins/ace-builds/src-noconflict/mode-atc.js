@@ -70,16 +70,16 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: "wait", 
-          regex: /\b([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])($|([ \t]+("[^",]*"?|'[^',]*'?|[^ \t,]*)))/
+          regex: /\b([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])([ \t]*("[^",]*"?|'[^',]*'?)|[ \t]+[^ \t,]*|$)/
         }, {
           token: "pend",
-          regex: /\b([Pp]|[Pp][Ee][Nn][Dd]|[Pp][Ee][Nn][Dd][Ii][Nn][Gg])($|([ \t]+("[^",]*"?|'[^',]*'?|[^ \t,]*)))/
+          regex: /\b([Pp]|[Pp][Ee][Nn][Dd]|[Pp][Ee][Nn][Dd][Ii][Nn][Gg])([ \t]*("[^",]*"?|'[^',]*'?)|[ \t]+[^ \t,]*|$)/
         }, {
           token: "clear",
-          regex: /\b([Cc]|[Cc][Ll][Ee][Aa][Rr]|[Cc][Ll][Ee][Aa][Rr][Ee][Dd])($|([ \t]+("[^",]*"?|'[^',]*'?|[^ \t,]*)))/
+          regex: /\b([Cc]|[Cc][Ll][Ee][Aa][Rr]|[Cc][Ll][Ee][Aa][Rr][Ee][Dd])([ \t]*("[^",]*"?|'[^',]*'?)|[ \t]+[^ \t,]*|$)/
         }, {
           token: "pass",
-          regex: /\b([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])($|([ \t]+("[^",]*"?|'[^',]*'?|[^ \t,]*)))/
+          regex: /\b([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])([ \t]*)([ \t]*("[^",]*"?|'[^',]*'?)|[ \t]+[^ \t,]*|$)/
         }, {
           token : "pos-number", 
           regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?\b/
