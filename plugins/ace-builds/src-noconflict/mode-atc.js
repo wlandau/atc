@@ -70,7 +70,7 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: "wait",
-          regex: /\b(wait)\b/
+          regex: /(^|[,;])([ \n\r\t]*)([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])(\b[^,;]*[,;]?)/
         }, {
           token: "pend",
           regex: /\b(pend)\b/
@@ -81,8 +81,14 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           token: "pass",
           regex: /\b(pass)\b/
         }, {
-          token: "number",
-          regex: /\S*\d\S*/
+          token : "pos-number", 
+          regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?\b/
+        }, {
+          token : "neg-number", 
+          regex : /-\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?\b/
+        }, {
+          token : "percent", 
+          regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?\b/
         }
       ],
       "comment_regex_allowed" : [
