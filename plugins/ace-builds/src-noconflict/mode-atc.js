@@ -70,16 +70,16 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: "wait",
-          regex: /(^|[,;])([ \n\r\t]*)([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])(\b[^,;]*[,;]?)/
+          regex: /([ \t]*)([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])($|[ \t]+[^ \t]*)/
         }, {
           token: "pend",
-          regex: /\b(pend)\b/
+          regex: /([ \t]*)([Pp]|[Pp][Ee][Nn][Dd]|[Pp][Ee][Nn][Dd][Ii][Nn][Gg])($|[ \t]+[^ \t]*)/
         }, {
           token: "clear",
-          regex: /\b(clear)\b/
+          regex: /([ \t]*)([Cc]|[Cc][Ll][Ee][Aa][Rr]|[Cc][Ll][Ee][Aa][Rr][Ee][Dd])($|[ \t]+[^ \t]*)/
         }, {
           token: "pass",
-          regex: /\b(pass)\b/
+          regex: /([ \t]*)([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])($|[ \t]+[^ \t]*)/
         }, {
           token : "pos-number", 
           regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?\b/

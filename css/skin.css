@@ -79,3 +79,7 @@
 .ace_percent {
   color: #00a;
 }
+.ace_comment {
+  color: #aaa;
+  text-decoration: line-through;
+}
