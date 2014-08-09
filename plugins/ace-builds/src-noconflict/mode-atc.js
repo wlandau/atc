@@ -70,16 +70,19 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: "wait",
-          regex: /\bwait\b/
+          regex: /\b(wait)\b/
         }, {
           token: "pend",
-          regex: /\bpend\b/
+          regex: /\b(pend)\b/
         }, {
           token: "clear",
-          regex: /\bclear\b/
+          regex: /\b(clear)\b/
         }, {
           token: "pass",
-          regex: /\bpass\b/
+          regex: /\b(pass)\b/
+        }, {
+          token: "number",
+          regex: /\S*\d\S*/
         }
       ],
       "comment_regex_allowed" : [

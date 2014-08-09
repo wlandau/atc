@@ -67,3 +67,15 @@
 .ace_pass {
   color: #aaa;
 }
+.ace_number{
+  color: yellow;
+}
+.ace_pos-number {
+  color: #0a0;
+}
+.ace_neg-number {
+  color: #a00;
+}
+.ace_percent {
+  color: #00a;
+}
