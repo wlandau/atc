@@ -4,7 +4,7 @@
   font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace;
 }
 
-/* colors */
+/* general colors */
 
 .atc{
   background: #ccc;
@@ -43,44 +43,8 @@
   background: #060;
   color: white;
 }
-
 .atc > .header .help.open:not(:active), .atc > .header .help:not(.open):active,
 .help > .header {
   background: #777;
   color: white;
-}
-
-/* syntax highlighting */
-
-.ace_wait {
-  color: #a0a;
-  border: 0.1em solid #a0a;
-}
-.ace_pend {
-  color: #aa0;
-  border: 0.1em solid #aa0;
-}
-.ace_clear {
-  color: #0aa;
-  border: 0.1em solid #0aa;
-}
-.ace_pass {
-  color: #aaa;
-  border: 0.1em solid #aaa;
-}
-.ace_pos-number {
-  color: #0a0;
-  border: 0.1em solid #0a0;
-}
-.ace_neg-number {
-  color: #a00;
-  border: 0.1em solid #a00;
-}
-.ace_percent {
-  color: #00a;
-  border: 0.1em solid #00a;
-}
-.ace_atc-comment, .ace_atc-comment.ace_doc, .ace_atc-comment.ace_doc.ace_tag {
-  color: #aaa;
-  text-decoration: line-through;
 }
