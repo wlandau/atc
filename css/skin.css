@@ -1,9 +1,6 @@
 /* general */
 
 * {
-  font-family: "Century Gothic", "Optima", "Trebuchet MS", "Verdana", "Comic Sans MS", Helvetica, sans-serif, Arial;  
-}
-#editor, #editor * {
   font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas", monospace;
 }
 
@@ -57,33 +54,33 @@
 
 .ace_wait {
   color: #a0a;
-  border-bottom: 0.1em solid #a0a;
+  border: 0.1em solid #a0a;
 }
 .ace_pend {
   color: #aa0;
-  border-bottom: 0.1em solid #aa0;
+  border: 0.1em solid #aa0;
 }
 .ace_clear {
   color: #0aa;
-  border-bottom: 0.1em solid #0aa;
+  border: 0.1em solid #0aa;
 }
 .ace_pass {
   color: #aaa;
-  border-bottom: 0.1em solid #aaa;
+  border: 0.1em solid #aaa;
 }
 .ace_pos-number {
   color: #0a0;
-  border-bottom: 0.1em solid #0a0;
+  border: 0.1em solid #0a0;
 }
 .ace_neg-number {
   color: #a00;
-  border-bottom: 0.1em solid #a00;
+  border: 0.1em solid #a00;
 }
 .ace_percent {
   color: #00a;
-  border-bottom: 0.1em solid #00a;
+  border: 0.1em solid #00a;
 }
-.ace_comment {
+.ace_atc-comment, .ace_atc-comment.ace_doc, .ace_atc-comment.ace_doc.ace_tag {
   color: #aaa;
   text-decoration: line-through;
 }

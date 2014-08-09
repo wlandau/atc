@@ -6,13 +6,13 @@ ace.define("ace/mode/doc_comment_highlight_rules", ["require","exports","module"
   var DocCommentHighlightRules = function() {
     this.$rules = {
       "start" : [ {
-        token : "comment.doc.tag",
+        token : "atc-comment.doc.tag",
           regex : "@[\\w\\d_]+" // TODO: fix email addresses
         }, {
-          token : "comment.doc.tag",
+          token : "atc-comment.doc.tag",
           regex : "\\bTODO\\b"
         }, {
-          defaultToken : "comment.doc"
+          defaultToken : "atc-comment.doc"
         }
       ]
     };
@@ -20,7 +20,7 @@ ace.define("ace/mode/doc_comment_highlight_rules", ["require","exports","module"
 
   DocCommentHighlightRules.getStartRule = function(start) {
     return {
-      token : "comment.doc", // doc comment
+      token : "atc-comment.doc", // doc comment
       regex : "\\/\\*(?=\\*)",
       next  : start
     };
@@ -28,7 +28,7 @@ ace.define("ace/mode/doc_comment_highlight_rules", ["require","exports","module"
 
   DocCommentHighlightRules.getEndRule = function (start) {
     return {
-      token : "comment.doc", // closing comment
+      token : "atc-comment.doc", // closing comment
       regex : "\\*\\/",
       next  : start
     };
@@ -47,25 +47,25 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
     this.$rules = {
       "no_regex": [
         DocCommentHighlightRules.getStartRule("doc-start"), {
-          token : "comment",
+          token : "atc-comment",
           regex : "\\/\\/",
           next : "line_comment"
         }, {
-          token : "comment", // multi line comment
+          token : "atc-comment", // multi line comment
           regex : /\/\*/,
-          next : "comment"
+          next : "atc-comment"
         }, {
-          token: "comment",
+          token: "atc-comment",
           regex: /^#!.*$/
         }
       ],
       "start": [
         DocCommentHighlightRules.getStartRule("doc-start"), {
-          token : "comment", // multi line comment
+          token : "atc-comment", // multi line comment
           regex : "\\/\\*",
-          next : "comment_regex_allowed"
+          next : "atc-comment_regex_allowed"
         }, {
-          token : "comment",
+          token : "atc-comment",
           regex : "\\/\\/",
           next : "line_comment_regex_allowed"
         }, {
@@ -91,41 +91,41 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?%([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
         }
       ],
-      "comment_regex_allowed" : [
+      "atc-comment_regex_allowed" : [
         {
-          token : "comment", 
+          token : "atc-comment", 
           regex : "\\*\\/", 
           next : "start"
         }, {
-          defaultToken : "comment"
+          defaultToken : "atc-comment"
         }
       ],
-      "comment" : [
+      "atc-comment" : [
         {
-          token : "comment", 
+          token : "atc-comment", 
           regex : "\\*\\/", 
           next : "no_regex"
         },
         {
-          defaultToken : "comment"
+          defaultToken : "atc-comment"
         }
       ],
       "line_comment_regex_allowed" : [
         {
-          token : "comment", 
+          token : "atc-comment", 
           regex : "$|^", 
           next : "start"
         }, {
-          defaultToken : "comment"
+          defaultToken : "atc-comment"
         }
       ],
       "line_comment" : [
         {
-          token : "comment", 
+          token : "atc-comment", 
           regex : "$|^", 
           next : "no_regex"
         }, {
-          defaultToken : "comment"
+          defaultToken : "atc-comment"
         }
       ]
     };
