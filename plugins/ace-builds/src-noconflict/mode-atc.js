@@ -79,7 +79,7 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           regex: /\b([Cc]|[Cc][Ll][Ee][Aa][Rr]|[Cc][Ll][Ee][Aa][Rr][Ee][Dd])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
         }, {
           token: "pass",
-          regex: /\b([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t,;]*|(?=[,;])|$)/
+          regex: /\b([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
         }, {
           token : "pos-number", 
           regex : /\+?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/

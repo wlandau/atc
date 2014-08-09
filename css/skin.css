@@ -57,27 +57,31 @@
 
 .ace_wait {
   color: #a0a;
+  border: 0.1em solid #a0a;
 }
 .ace_pend {
   color: #aa0;
+  border: 0.1em solid #aa0;
 }
 .ace_clear {
   color: #0aa;
+  border: 0.1em solid #0aa;
 }
 .ace_pass {
   color: #aaa;
-}
-.ace_number{
-  color: yellow;
+  border: 0.1em solid #aaa;
 }
 .ace_pos-number {
   color: #0a0;
+  border: 0.1em solid #0a0;
 }
 .ace_neg-number {
   color: #a00;
+  border: 0.1em solid #a00;
 }
 .ace_percent {
   color: #00a;
+  border: 0.1em solid #00a;
 }
 .ace_comment {
   color: #aaa;
