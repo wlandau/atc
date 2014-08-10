@@ -44,15 +44,21 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
   var DocCommentHighlightRules = require("./doc_comment_highlight_rules").DocCommentHighlightRules;
 
   var atcHighlightRules = function() { 
+    
+    
+    var delims= ",;" //"[,]";
+    var decimal="\\.";
   
     var rx = {
-      begin: "(^|[,;])([ \\t]*(?:",
-      end: ")(?:$|(?=[,;])|[ \\t]+[^,;]*))",
+      begin: "(^|[" + delims + "])([ \\t]*(?:", // no quoting, commas delimit fields, semicolons delimit transactions
+      end: ")(?:$|(?=[" + delims + "])|[ \\t]+[^" + delims + "]*))", // no quoting, commas delimit fields, semicolons delimit transactions
+//      begin: "(^|[ \\t" + delims + "])((?:", // quoting, commas optionally delimit fields, semicolons delimit transactions
+//      end: ")(?:$|(?=[" + delims + "])|[ \\t]*(?:\"[^\"]*\"?|'[^']*'?)|[ \\t]+[^ \t" + delims +"]*))", // quoting, commas optionally delimit fields, semicolons delimit transactions
       wait: "w|wait|waiting",
       pend: "p|pend|pending",
       clear: "c|clear|cleared",
       pass: "s|pass|passed",
-      number: "(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?",
+      number: "(?:\\d+" + decimal + "?\\d*|" + decimal + "\\d+)(?:[eE][+-]?\\d+)?",
     };
   
     this.$rules = {
@@ -99,7 +105,7 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           regex : rx.begin + "-" + rx.number + rx.end
         }, {
           token : ["text", "percent"], 
-          regex : rx.begin + rx.number + "%" + rx.end
+          regex : rx.begin + "[+-]?" + rx.number + "%" + rx.end
         }, {
             caseInsensitive: true
         }
