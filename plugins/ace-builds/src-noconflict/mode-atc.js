@@ -44,6 +44,17 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
   var DocCommentHighlightRules = require("./doc_comment_highlight_rules").DocCommentHighlightRules;
 
   var atcHighlightRules = function() { 
+  
+    var rx = {
+      begin: "(^|[,;])([ \\t]*(?:",
+      end: ")(?:$|(?=[,;])|[ \\t]+[^,;]*))",
+      wait: "w|wait|waiting",
+      pend: "p|pend|pending",
+      clear: "c|clear|cleared",
+      pass: "s|pass|passed",
+      number: "(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?",
+    };
+  
     this.$rules = {
       "no_regex": [
         DocCommentHighlightRules.getStartRule("doc-start"), {
@@ -69,26 +80,28 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           regex : "\\/\\/",
           next : "line_comment_regex_allowed"
         }, {
-          token: "wait", 
-          regex: /\b([Ww]|[Ww][Aa][Ii][Tt]|[Ww][Aa][Ii][Tt][Ii][Nn][Gg])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token: ["text", "wait"], 
+          regex: rx.begin + rx.wait + rx.end
         }, {
-          token: "pend",
-          regex: /\b([Pp]|[Pp][Ee][Nn][Dd]|[Pp][Ee][Nn][Dd][Ii][Nn][Gg])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token: ["text", "pend"], 
+          regex: rx.begin + rx.pend + rx.end
         }, {
-          token: "clear",
-          regex: /\b([Cc]|[Cc][Ll][Ee][Aa][Rr]|[Cc][Ll][Ee][Aa][Rr][Ee][Dd])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token: ["text", "clear"], 
+          regex: rx.begin + rx.clear + rx.end
         }, {
-          token: "pass",
-          regex: /\b([Ss]|[Pp][Aa][Ss][Ss]|[Pp][Aa][Ss][Ss][Ee][Dd])([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token: ["text", "pass"], 
+          regex: rx.begin + rx.pass + rx.end
         }, {
-          token : "pos-number", 
-          regex : /\+?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token : ["text", "pos-number"], 
+          regex : rx.begin + "\\+?" + rx.number + rx.end
         }, {
-          token : "neg-number", 
-          regex : /-\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token : ["text", "neg-number"], 
+          regex : rx.begin + "-" + rx.number + rx.end
         }, {
-          token : "percent", 
-          regex : /[+-]?\d+(?:(?:\.\d*)?(?:[eE][+-]?\d+)?)?%([ \t]*("[^"]*"?|'[^']*'?)|[ \t]+[^ \t]*|$)/
+          token : ["text", "percent"], 
+          regex : rx.begin + rx.number + "%" + rx.end
+        }, {
+            caseInsensitive: true
         }
       ],
       "atc-comment_regex_allowed" : [
