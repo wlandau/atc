@@ -48,10 +48,11 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
     
     var delims= ",;" //"[,]";
     var decimal="\\.";
+    var whitespace = " \tt"
   
     var rx = {
-      begin: "(^|[" + delims + "])([ \\t]*(?:", // no quoting, commas delimit fields, semicolons delimit transactions
-      end: ")(?:$|(?=[" + delims + "])|[ \\t]+[^" + delims + "]*))", // no quoting, commas delimit fields, semicolons delimit transactions
+      begin: "(^|[" + delims + "])([ \\t]*)((?:", // no quoting, commas delimit fields, semicolons delimit transactions
+      end: ")(?:[ \\t]+[^" + delims + "]*[^ \\t" + delims + "]+|(?=[ \\t]*[" + delims + "]?)))([ \\t]*[" + delims + "]?)", // no quoting, commas delimit fields, semicolons delimit transactions
 //      begin: "(^|[ \\t" + delims + "])((?:", // quoting, commas optionally delimit fields, semicolons delimit transactions
 //      end: ")(?:$|(?=[" + delims + "])|[ \\t]*(?:\"[^\"]*\"?|'[^']*'?)|[ \\t]+[^ \t" + delims +"]*))", // quoting, commas optionally delimit fields, semicolons delimit transactions
       wait: "w|wait|waiting",
@@ -86,9 +87,11 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           regex : "\\/\\/",
           next : "line_comment_regex_allowed"
         }, {
-          token: ["text", "wait"], 
+          token: ["text", "text", "wait", "text"], 
           regex: rx.begin + rx.wait + rx.end
-        }, {
+        }, 
+        /*
+        {
           token: ["text", "pend"], 
           regex: rx.begin + rx.pend + rx.end
         }, {
@@ -106,7 +109,7 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
         }, {
           token : ["text", "percent"], 
           regex : rx.begin + "[+-]?" + rx.number + "%" + rx.end
-        }, {
+        }, */{
             caseInsensitive: true
         }
       ],
