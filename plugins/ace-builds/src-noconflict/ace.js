@@ -10694,7 +10694,9 @@ exports.commands = [{
    // bindKey: bindKey("Ctrl-H", "Command-Option-F"),
     bindKey: bindKey("Ctrl-F", "Command-F"),
     exec: function(editor) {
-        config.loadModule("ace/ext/searchbox", function(e) {e.Search(editor, true)});
+      config.loadModule("ace/ext/searchbox", function(e) {
+        e.Search(editor, true)
+      });
     }
 }, {
     name: "undo",

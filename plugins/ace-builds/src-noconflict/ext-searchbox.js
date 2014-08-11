@@ -159,7 +159,7 @@ dom.importCssString(searchboxCss, "ace_searchbox");
 
 var html = '<div class="ace_search right">\
   <div class="ace_search_options">\
-    <span type="button" action="hide" class="ace_searchbtn_close"></span>\
+    <span action="hide" class="ace_searchbtn_close"></span>\
     <span action="toggleCaseSensitive" class="ace_button" title="CaseSensitive Search">case</span>\
     <span action="toggleWholeWords" class="ace_button" title="Whole Word Search">words</span>\
     <span action="toggleRegexpMode" class="ace_button" title="RegExp Search">regex</span>\
@@ -259,10 +259,8 @@ var SearchBox = function(editor, range, showReplaceForm) {
     }]);
     this.$searchBarKb = new HashHandler();
     this.$searchBarKb.bindKeys({
-        "Ctrl-f|Command-f|Ctrl-H|Command-Option-F": function(sb) {
-            var isReplace = sb.isReplace = !sb.isReplace;
-            sb.replaceBox.style.display = isReplace ? "" : "none";
-            sb[isReplace ? "replaceInput" : "searchInput"].focus();
+        "Ctrl-F|Command-F": function(sb) {
+           sb.hide();
         },
         "Ctrl-G|Command-G": function(sb) {
             sb.findNext();
