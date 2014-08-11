@@ -1,11 +1,11 @@
 ;(function(){
-  var changePanelsOnClick = function(cfg){
+  var changePanelsOnClick = function(config){
     $(".atc > .header div").click(function(){
       var This = $(this);
       This.toggleClass("open");
       var panelClass = This.attr("class").replace("open", "").trim(),
           panel = $(".panel." + panelClass).toggleClass("open");
-      cfg.panels[panelClass] = panel.is(".open");
+      config.panels[panelClass] = panel.is(".open");
       fitPanels();
     });
   };
@@ -30,17 +30,17 @@
     });
   };
   
-  var initializePanels = function(cfg){
+  var initializePanels = function(config){
     $(".atc > .header div, .panel").removeClass("open");
-    for(panel in cfg.panels)
-      if(cfg.panels[panel])
+    for(panel in config.panels)
+      if(config.panels[panel])
         $(".atc > .header ." + panel + ", .panel." + panel).addClass("open");
     fitPanels();
   };
   
-  ATC.prototype.panels = function(){
-    changePanelsOnClick(this.cfg);
+  ATC.prototype.panelUI = function(){
+    changePanelsOnClick(this.config);
     fitPanelsOnResize();
-    initializePanels(this.cfg);
+    initializePanels(this.config);
   };
 })();

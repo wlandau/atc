@@ -1,3 +1,3 @@
-function ATC(cfg){
-  this.cfg = cfg || new ATCconfig();
+function ATC(config){
+  this.config = config || new ATCconfig();
 };
