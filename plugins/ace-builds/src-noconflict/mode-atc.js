@@ -45,23 +45,8 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
 
   var atcHighlightRules = function() { 
     
-    
-    var delims= ",;" //"[,]";
-    var decimal="\\.";
-    var whitespace = " \tt"
-  
-    var rx = {
-      begin: "(^|[" + delims + "])([ \\t]*)((?:", // no quoting, commas delimit fields, semicolons delimit transactions
-      end: ")(?:[ \\t]+[^" + delims + "]*[^ \\t" + delims + "]+|(?=[ \\t]*[" + delims + "]?)))([ \\t]*[" + delims + "]?)", // no quoting, commas delimit fields, semicolons delimit transactions
-//      begin: "(^|[ \\t" + delims + "])((?:", // quoting, commas optionally delimit fields, semicolons delimit transactions
-//      end: ")(?:$|(?=[" + delims + "])|[ \\t]*(?:\"[^\"]*\"?|'[^']*'?)|[ \\t]+[^ \t" + delims +"]*))", // quoting, commas optionally delimit fields, semicolons delimit transactions
-      wait: "w|wait|waiting",
-      pend: "p|pend|pending",
-      clear: "c|clear|cleared",
-      pass: "s|pass|passed",
-      number: "(?:\\d+" + decimal + "?\\d*|" + decimal + "\\d+)(?:[eE][+-]?\\d+)?",
-    };
-  
+    var lang = window.atc.cfg.lang;
+
     this.$rules = {
       "no_regex": [
         DocCommentHighlightRules.getStartRule("doc-start"), {
@@ -88,28 +73,26 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: ["text", "text", "wait", "text"], 
-          regex: rx.begin + rx.wait + rx.end
-        }, 
-        /*
-        {
-          token: ["text", "pend"], 
-          regex: rx.begin + rx.pend + rx.end
+          regex: lang.waitField
         }, {
-          token: ["text", "clear"], 
-          regex: rx.begin + rx.clear + rx.end
+          token: ["text", "text", "pend", "text"], 
+          regex: lang.pendField
         }, {
-          token: ["text", "pass"], 
-          regex: rx.begin + rx.pass + rx.end
+          token: ["text", "text", "clear", "text"], 
+          regex: lang.clearField
         }, {
-          token : ["text", "pos-number"], 
-          regex : rx.begin + "\\+?" + rx.number + rx.end
+          token: ["text", "text", "pass", "text"], 
+          regex: lang.passField
         }, {
-          token : ["text", "neg-number"], 
-          regex : rx.begin + "-" + rx.number + rx.end
+          token : ["text", "text", "pos-number", "text"], 
+          regex : lang.posNumberField
         }, {
-          token : ["text", "percent"], 
-          regex : rx.begin + "[+-]?" + rx.number + "%" + rx.end
-        }, */{
+          token : ["text", "text", "neg-number", "text"], 
+          regex : lang.negNumberField
+        }, {
+          token : ["text", "text", "percent", "text"], 
+          regex : lang.percentField
+        }, {
             caseInsensitive: true
         }
       ],
