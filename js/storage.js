@@ -1,8 +1,10 @@
 ;(function(localStorage, ATC){
-  storeLocally = function(atc){
+  
+  storeLocally = function(atc, saveType){
     var editor = ace.edit("editor");
     localStorage.setItem("ATCconfig", JSON.stringify(atc.config)); 
-    localStorage.setItem("ATCtext", editor.getSession().getValue()); 
+    if(saveType === "all")
+      localStorage.setItem("ATCtext", editor.getSession().getValue()); 
   };
 
   var retrieveLocally = function(atc){
@@ -12,10 +14,10 @@
     editor.moveCursorTo(0, 0);
   };
 
-  ATC.prototype.save = function(){
+  ATC.prototype.save = function(saveType){
     $(".save").removeClass("no-save unsaved saved").addClass("saving");    
     if(this.config.storage === "local")
-      storeLocally(this);
+      storeLocally(this, saveType);
     $(".save").removeClass("no-save unsaved saving").addClass("saved");
   };
   

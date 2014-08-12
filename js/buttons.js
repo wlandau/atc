@@ -6,7 +6,7 @@ ATC.prototype.buttons = function(){
       $(".save").removeClass("no-save saving saved").addClass("unsaved");  
   };
 
-  $(".editor").keydown(function(e){
+  $(".editor").keyup(function(e){
     if(e.metaKey)
       return;
 
@@ -27,6 +27,6 @@ ATC.prototype.buttons = function(){
   
   $(".save").click(function(){
     if($(this).is(".unsaved"))
-      atc.save();
+      atc.save("all");
   });
 };
