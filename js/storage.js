@@ -24,13 +24,12 @@
       localStorage.setItem("ATCtext", editor.getSession().getValue()); 
   };
 
-  var actuallySAVE = function(atc, callback, saveType){
+  var actuallySave = function(atc, saveType){
     if(atc.config.storage === "local")
       storeLocally(atc, saveType);
-    callback();
   }
 
-  var callback = function(){
+  var afterSave = function(){
     var saveButton = $(".save");
     if(saveButton.is(".saving"))
       saveButton.removeClass("saving").addClass("saved");
@@ -44,7 +43,8 @@
     $(".save").removeClass(".saved").addClass("saving");
     clearTimeout(typingTimer);
     typingTimer = setTimeout(function(){
-      actuallySAVE(atc, callback, saveType)
+      actuallySave(atc, saveType);
+      afterSave();
     }, doneTypingInterval);
   };
   
