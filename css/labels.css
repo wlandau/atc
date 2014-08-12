@@ -24,7 +24,10 @@
 .merge:before {
   content: "Merge selection";
 }
-.save:before {
+.no-save:before{
+  content: "Saving disabled";
+}
+.unsaved:before {
   content: "Save";
 }
 .saved:before {

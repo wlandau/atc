@@ -1,4 +1,4 @@
-;(function(){
+;(function(ATC){
   var changePanelsOnClick = function(config){
     $(".atc > .header div").click(function(){
       var This = $(this);
@@ -43,4 +43,4 @@
     fitPanelsOnResize();
     initializePanels(this.config);
   };
-})();
+})(ATC);

@@ -9,7 +9,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div:active, 
+.atc > .header div, .editor .header div:not(.saving):not(.saved):active, 
 .summary .header:active div {
   background: #ccc;
   color: black;
