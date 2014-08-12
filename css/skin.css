@@ -9,7 +9,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div:not(.save):active, 
+.atc > .header div, .editor .header div/*:not(.save)*/:active, 
 .summary .header:active div {
   background: #ccc;
   color: black;
@@ -48,43 +48,37 @@
   background: #777;
   color: white;
 }
-
 .unsaved {
-background: #960;
+  background: #960;
 }
-.unsaved:active{
+
+/*.unsaved:active{
   background: #906;
 }
+*/
 
 /* syntax highlighting */
 
 .ace_wait {
   color: #a0a;
-  outline: 0.1em solid #a0a;
 }
 .ace_pend {
   color: #aa0;
-  outline: 0.1em solid #aa0;
 }
 .ace_clear {
   color: #0aa;
-  outline: 0.1em solid #0aa;
 }
 .ace_pass {
   color: #aaa;
-  outline: 0.1em solid #aaa;
 }
 .ace_pos-number {
   color: #0a0;
-  outline: 0.1em solid #0a0;
 }
 .ace_neg-number {
   color: #a00;
-  outline: 0.1em solid #a00;
 }
 .ace_percent {
   color: #00a;
-  outline: 0.1em solid #00a;
 }
 .ace_atc-comment, .ace_atc-comment.ace_doc, .ace_atc-comment.ace_doc.ace_tag {
   color: #aaa;
