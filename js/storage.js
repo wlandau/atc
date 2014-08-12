@@ -20,20 +20,23 @@
       saveButton.addClass("saved")      
   };
 
-  var storeLocally = function(atc, saveType){
+  var storeLocally = function(atc){
     var editor = ace.edit("editor");
     localStorage.setItem("ATCconfig", JSON.stringify(atc.config)); 
-    if(saveType === "all" || saveType === undefined)
-      localStorage.setItem("ATCtext", editor.getSession().getValue()); 
+    localStorage.setItem("ATCtext", editor.getSession().getValue()); 
   };
+  
+  var storageStep = function(){
+    if(atc.config.storage === "local")
+      storeLocally(atc);  
+  }
   
   var reportSaved = function(){
     $(".save").removeClass("unsaved").addClass("saved");
   };
 
-  ATC.prototype.save = function(saveType){
-    if(this.config.storage === "local")
-      storeLocally(atc, saveType);
+  ATC.prototype.save = function(){  
+    storageStep();    
     reportSaved();
   };  
 
