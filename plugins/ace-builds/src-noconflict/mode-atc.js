@@ -73,25 +73,25 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           next : "line_comment_regex_allowed"
         }, {
           token: ["text", "text", "wait", "text"], 
-          regex: lang.waitField
+          regex: lang.waitFieldAce
         }, {
           token: ["text", "text", "pend", "text"], 
-          regex: lang.pendField
+          regex: lang.pendFieldAce
         }, {
           token: ["text", "text", "clear", "text"], 
-          regex: lang.clearField
+          regex: lang.clearFieldAce
         }, {
           token: ["text", "text", "pass", "text"], 
-          regex: lang.passField
+          regex: lang.passFieldAce
         }, {
           token : ["text", "text", "pos-number", "text"], 
-          regex : lang.posNumberField
+          regex : lang.posNumberFieldAce
         }, {
           token : ["text", "text", "neg-number", "text"], 
-          regex : lang.negNumberField
+          regex : lang.negNumberFieldAce
         }, {
           token : ["text", "text", "percent", "text"], 
-          regex : lang.percentField
+          regex : lang.percentFieldAce
         }, {
             caseInsensitive: true
         }

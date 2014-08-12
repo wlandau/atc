@@ -19,9 +19,16 @@
   height: 2em;
 }
 .header div {
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
   line-height: 2em;
   float: left;
   text-overflow: ellipsis;
+  user-select: none;
   white-space: nowrap;
 }
 .panel {
