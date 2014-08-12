@@ -28,7 +28,7 @@
   
   var storageStep = function(){
     if(atc.config.storage === "local")
-      storeLocally(atc);  
+      storeLocally(atc);        
   }
   
   var reportSaved = function(){
