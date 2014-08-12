@@ -30,7 +30,10 @@
 .saved:before {
   content: "Saved";
 }
-.saving:before {
+.unsaved:before {
+  content: "Save";
+}
+.unsaved:active:before{
   content: "Saving...";
 }
 

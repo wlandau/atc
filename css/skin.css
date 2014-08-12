@@ -49,6 +49,13 @@
   color: white;
 }
 
+.unsaved {
+background: #960;
+}
+.unsaved:active{
+  background: #906;
+}
+
 /* syntax highlighting */
 
 .ace_wait {
