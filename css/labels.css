@@ -27,9 +27,6 @@
 .no-save:before{
   content: "Saving disabled";
 }
-.unsaved:before {
-  content: "Save";
-}
 .saved:before {
   content: "Saved";
 }
