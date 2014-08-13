@@ -93,6 +93,9 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
           token : ["text", "text", "percent", "text"], 
           regex : lang.percentFieldAce
         }, {
+          token : ["text", "text", "date", "text"], 
+          regex : lang.date
+        }, {
             caseInsensitive: true
         }
       ],

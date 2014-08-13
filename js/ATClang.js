@@ -57,4 +57,7 @@ ATClang= function(decimal, fieldDelim, transactionDelim){
   this.pend = statusRegex(pend);
   this.clear = statusRegex(clear);
   this.pass = statusRegex(pass);
+  
+  var dateDelims = "(?:\/|\.|-)"
+  this.date = beginAce + "\\d\\d\\d\\d" + dateDelims + "(?:0[1-9]|1[012])" + dateDelims + "(?:0[1-9]|[12]\\d|3[01])))((?=[" + delims + whitespace + "])|$)";
 };

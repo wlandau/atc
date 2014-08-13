@@ -9,7 +9,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div/*:not(.save)*/:active, 
+.atc > .header div, .editor .header div:not(.saved):active, 
 .summary .header:active div {
   background: #ccc;
   color: black;
@@ -79,6 +79,9 @@
 }
 .ace_percent {
   color: #00a;
+}
+.ace_date {
+  color: #a09;
 }
 .ace_atc-comment, .ace_atc-comment.ace_doc, .ace_atc-comment.ace_doc.ace_tag {
   color: #aaa;
