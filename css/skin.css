@@ -60,28 +60,19 @@
 /* syntax highlighting */
 
 .ace_wait {
-  color: #a0a;
+  color: red;
 }
 .ace_pend {
-  color: #aa0;
+  color: orange;
 }
 .ace_clear {
-  color: #0aa;
+  color: blue;
 }
 .ace_pass {
   color: #aaa;
 }
-.ace_pos-number {
-  color: #0a0;
-}
-.ace_neg-number {
-  color: #a00;
-}
-.ace_percent {
-  color: #00a;
-}
-.ace_date {
-  color: #00a;
+.ace_pos-number, .ace_neg-number, .ace_percent, .ace_date {
+  color: green;
 }
 .ace_atc-comment, .ace_atc-comment.ace_doc, .ace_atc-comment.ace_doc.ace_tag {
   color: #aaa;
