@@ -14,7 +14,7 @@
     }
 
     /* Create new objects from all constructors if not given as arguments. */
-  
+
     for(obj in this){
       if(isConstructor(obj)){
         var instance = obj.charAt(0).toLowerCase() + obj.slice(1);
