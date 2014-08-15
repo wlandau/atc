@@ -1,4 +1,4 @@
-ATClang= function(decimal, fieldDelim, transactionDelim){
+ATC.prototype.Lang = function(decimal, fieldDelim, transactionDelim){
 
   this.decimal = decimal || "\\.";
   this.fieldDelim = fieldDelim || ",";
