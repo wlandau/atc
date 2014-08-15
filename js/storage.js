@@ -1,29 +1,24 @@
 ;(function(localStorage, ATC){
 
   var retrieveLocally = function(atc){
-    var editor = ace.edit("editor");    
-    atc.config = JSON.parse(localStorage.getItem("ATCconfig")) || new ATCconfig();
-    editor.setValue(localStorage.getItem("ATCtext")) || "";
+    var atc = JSON.parse(localStorage.getItem("atc")) || new ATC(), 
+        editor = ace.edit("editor");    
+    
+    editor.setValue(atc.text || "");
     editor.moveCursorTo(0, 0);
   };
 
   ATC.prototype.retrieve = function(){
-    if(this.config.storage === "none")
+    if(this.storage === "none")
       return;
-    else if(this.config.storage === "local")
-      retrieveLocally(this);
-      
-    var saveButton = $(".save");
-    if(this.config.storage === "none")
-      saveButton.addClass("no-save")
-    else if(this.config.storage === "local")
-      saveButton.addClass("saved")      
+    else if(this.storage === "local")
+      retrieveLocally(this);     
   };
 
   var storeLocally = function(atc){
     var editor = ace.edit("editor");
-    localStorage.setItem("ATCconfig", JSON.stringify(atc.config)); 
-    localStorage.setItem("ATCtext", editor.getSession().getValue()); 
+    atc.text = editor.getSession().getValue();
+    localStorage.setItem("atc", JSON.stringify(atc)); 
   };
   
   var storageStep = function(){

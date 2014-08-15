@@ -45,7 +45,7 @@ ace.define('ace/mode/atc_highlight_rules', ["require","exports","module","ace/li
 
   var atcHighlightRules = function() { 
     
-    var lang = window.atc.config.lang;
+    var lang = window.atc.lang;
 
     this.$rules = {
       "no_regex": [
