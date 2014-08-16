@@ -33,10 +33,9 @@
 .unsaved:before {
   content: "Save";
 }
-/*
-.unsaved:active:before{
+.saving:before{
   content: "Saving...";
-}*/
+}
 
 /* ledger */
 

@@ -1,6 +1,6 @@
 ATC.prototype.load = function(){
-/*  this.retrieve(); */
-  this.buttonsATC(); 
+  this.retrieve();
   this.pluginACE();
-  this.buttonsEditor();
+  this.buttonsATC();
+  this.buttonSave();
 };
