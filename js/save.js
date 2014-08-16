@@ -22,6 +22,8 @@
   ATC.prototype.save = function(){  
     if(this.storage.mode === "local")
       storeLocally(this);
+      
+    for(var i = 0; i < 1000000000; ++i) i = i + 1; console.log(i);
   };  
 
 })(window.localStorage, ATC, undefined);
