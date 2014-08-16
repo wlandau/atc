@@ -1,9 +1,9 @@
-;(function(localStorage, ATC){
+;(function(window, ATC){
 
   var retrieveLocally = function(atc){
-    var atc = new ATC(JSON.parse(localStorage.getItem("atc"))), 
-        editor = ace.edit("editor");    
+    atc.configure(JSON.parse(localStorage.getItem("atc")));
     
+    var editor = ace.edit("editor");    
     editor.setValue(atc.text || "");
     editor.moveCursorTo(0, 0);
   };
