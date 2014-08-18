@@ -1,5 +1,4 @@
 ;(function(window, ATC){
-
   var retrieveLocally = function(atc){
     atc.configure(JSON.parse(localStorage.getItem("atc")));
     
@@ -13,15 +12,15 @@
       retrieveLocally(this);     
   };
 
-  var storeLocally = function(atc){
+  var saveLocally = function(atc){
     var editor = ace.edit("editor");
     atc.text = editor.getSession().getValue();
     localStorage.setItem("atc", JSON.stringify(atc)); 
   };
 
-  ATC.prototype.save = function(){  
+  ATC.prototype.save = function(){
     if(this.storage.mode === "local")
-      storeLocally(this);
+      saveLocally(this);
       
     for(var i = 0; i < 1000000000; ++i) i = i + 1; console.log(i);
   };  

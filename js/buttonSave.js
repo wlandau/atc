@@ -25,9 +25,9 @@ ATC.prototype.buttonSave = function(){
   };
 
   var interactiveSave = function(){
-    showSaving();
-    atc.save();
-    showSaved();  
+    showSaving()
+    setTimeout(function(){atc.save()}, 0);
+    setTimeout(function(){showSaved()}, 0);
   };
 
   editor.on("change", showSave);
