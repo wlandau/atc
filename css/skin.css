@@ -9,7 +9,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div:not(.no-save):not(.saving):not(.saved):active, 
+.atc > .header div, .editor .header div:not(.save):active, 
 .summary .header:active div {
   background: #ccc;
   color: black;
@@ -48,6 +48,9 @@
   background: #777;
   color: white;
 }
+
+/* show progress of saving */
+
 .unsaved {
   background: #960;
 }

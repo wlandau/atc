@@ -16,7 +16,7 @@ ATC.prototype.buttonSave = function(){
 
   var showSaving = function(){
     if(!saveButton.is(".no-save"))
-      saveButton.removeClass("unsaved saved").addClass("saving");  
+      saveButton.removeClass("unsaved saved").addClass("saving");
   };
 
   var showSaved = function(){
@@ -24,7 +24,7 @@ ATC.prototype.buttonSave = function(){
       saveButton.removeClass("unsaved saving").addClass("saved");  
   };
 
-  var interactiveSave = function(){
+  var UIsave = function(){  
     showSaving()
     setTimeout(function(){atc.save()}, 0);
     setTimeout(function(){showSaved()}, 0);
@@ -35,14 +35,15 @@ ATC.prototype.buttonSave = function(){
   
   $(document).keydown(function(e) {
     var key = e.which || e.charCode || e.keyCode;
-    if(saveButton.is(".unsaved") && (e.ctrlKey || e.metaKey) && (key === 83 || key === 115)){
+    if((e.ctrlKey || e.metaKey) && (key === 83 || key === 115)){
       e.preventDefault();
-      interactiveSave();
+      if(saveButton.is(".unsaved"))
+        UIsave();
     }
   });
 
   saveButton.click(function(e){
     if(saveButton.is(".unsaved"))
-      interactiveSave();
+      UIsave();
   });
 };
