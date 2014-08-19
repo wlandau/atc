@@ -1,14 +1,12 @@
+
+
+
 ATC.prototype.buttonSave = function(){
   var atc = this,
       editor = ace.edit("editor"),
       editArea = $(".ace_content"),
       mode = this.storage.mode,
       saveButton = $(".save");
-
-  if(mode === "local")
-    saveButton.removeClass("no-save unsaved saving").addClass("saved");
-  else if(mode === "none")
-    saveButton.removeClass("unsaved saving saved").addClass("no-save");
 
   var asyncSave = function(){
     var def = $.Deferred();
@@ -71,8 +69,14 @@ ATC.prototype.buttonSave = function(){
     }, 0);
     return def.promise(); 
   };
- 
+
+
+
+
+
+
   var UIsave = function(){
+    console.log(mode);
     if(mode === "none")
       showNoSave();
     else if(mode === "local")
@@ -86,10 +90,16 @@ ATC.prototype.buttonSave = function(){
       showSave();
   };
 
+  if(mode === "local")
+    saveButton.removeClass("no-save unsaved saving").addClass("saved");
+  else if(mode === "none")
+    saveButton.removeClass("unsaved saving saved").addClass("no-save");
+
   editor.on("change", UIenableSave);
-  $(".atc > .header div").click(UIenableSave);
   
-  $(document).keydown(function(e) {
+  $(".atc > .header div").on("click", UIenableSave);
+  
+  $(document).on("keydown", function(e) {
     var key = e.which || e.charCode || e.keyCode;
 
     if(key === 8 || key === 46){
@@ -101,7 +111,7 @@ ATC.prototype.buttonSave = function(){
     }
   });
 
-  saveButton.click(function(e){
+  saveButton.on("click", function(e){
     if(saveButton.is(".unsaved"))
       UIsave();
   });
