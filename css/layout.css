@@ -51,10 +51,10 @@ body {
 /* header field widths */
 
 .atc > .header div {
-  width: 20%;
+  width: 16.66%;
 }
 .editor .header div {
-  width: 33.33%;
+  width: 50%;
 }
 .ledger .header div {
   width: 25%;

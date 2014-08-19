@@ -9,8 +9,7 @@
 .atc{
   background: #ccc;
 }
-.atc > .header div, .editor .header div:not(.save):active, 
-.summary .header:active div {
+.atc > .header div:not(.save), .editor .header div:active, .summary .header:active div {
   background: #ccc;
   color: black;
 }
@@ -50,8 +49,10 @@
 }
 
 /* show progress of saving */
-
-.unsaved {
+.unsaved.save, .saving.save {
+  color: white;
+}
+.unsaved.save {
   background: #960;
 }
 .saving.save{
