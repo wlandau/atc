@@ -14,8 +14,7 @@ ATC.prototype.load = function(){
     var def = $.Deferred();
     setTimeout(function() {
       atc.pluginACE();
-      atc.buttonsATC();
-      atc.buttonSave();
+      atc.buttons();
       def.resolve();
     }, 0);
     return def.promise();
