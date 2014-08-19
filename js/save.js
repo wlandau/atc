@@ -1,35 +1,20 @@
 ;(function(localStorage, ATC){
 
-  var getStorageSettings = function(atc){
-    var obj = localStorage.getItem("atcStorageSettings");
-    
-    if(obj === null)
-      localStorage.setItem("atcStorageSettings", JSON.stringify(new atc.Storage()));
-    else
-      atc.configure({storage: JSON.parse(obj)});  
+  var retrieveLocally = function(atc, obj){
+    var editor = ace.edit("editor");
+    atc.configure(obj);
+    editor.setValue(atc.text || "");
+    editor.moveCursorTo(0, 0);  
   };
   
-  ATC.prototype.setStorageMode = function(mode){
-    var storage = this.storage;
-    this.storage.mode = mode;
-    localStorage.setItem("atcStorageSettings", JSON.stringify(storage));
-  };
-  
-  var retrieveLocally = function(atc){
-    var editor = ace.edit("editor"), 
-        obj = localStorage.getItem("atc");
-        
-    if(obj !== null){
-      atc.configure(JSON.parse(obj));
-      editor.setValue(atc.text || "");
-      editor.moveCursorTo(0, 0);
-    }
-  };
-
   ATC.prototype.retrieve = function(){
-    getStorageSettings(atc);
-    if(this.storage.mode === "local")
-      retrieveLocally(this);  
+    var obj = JSON.parse(localStorage.getItem("atc"));    
+
+    if(obj !== null){
+      this.storage = obj.storage;
+      if(obj.storage.mode === "local")
+        retrieveLocally(this, obj);   
+    }
   };
 
   var saveLocally = function(atc){
@@ -39,8 +24,9 @@
   };
 
   ATC.prototype.save = function(){
-    getStorageSettings(atc);
-    if(this.storage.mode === "local")
+    if(this.storage.mode === "no-save")
+      localStorage.setItem("atc", JSON.stringify({storage: new this.Storage("no-save")})); 
+    else if(this.storage.mode === "local")
       saveLocally(this);
   };  
 
