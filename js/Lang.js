@@ -37,7 +37,7 @@ ATC.prototype.Lang = function(decimal, fieldDelim, transactionDelim){
       },
 
       statusRegex = function(status){
-        str = "^[" + whitespace + "]*(" + status + ")([" + whitespace + "]+|$)";
+        var str = "^[" + whitespace + "]*(" + status + ")([" + whitespace + "]+|$)";
         return new RegExp(str, "i");
       };
 

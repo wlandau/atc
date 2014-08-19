@@ -1,14 +1,14 @@
 ATC.prototype.buttonSave = function(){
   var atc = this,
       editor = ace.edit("editor"),
-      editWindow = $(".ace_content"),
+      editArea = $(".ace_content"),
       mode = this.storage.mode,
       saveButton = $(".save");
 
   if(mode === "local")
-    saveButton.addClass("saved");
+    saveButton.removeClass("no-save unsaved saving").addClass("saved");
   else if(mode === "none")
-    saveButton.addClass("no-save");
+    saveButton.removeClass("unsaved saving saved").addClass("no-save");
 
   var asyncSave = function(){
     var def = $.Deferred();
@@ -22,8 +22,7 @@ ATC.prototype.buttonSave = function(){
   var showSave = function(){
     var def = $.Deferred();
     setTimeout(function() {
-      if(!saveButton.is(".no-save"))
-        saveButton.removeClass("saving saved").addClass("unsaved");  
+      saveButton.removeClass("no-save saving saved").addClass("unsaved");  
       def.resolve();
     }, 0);
     return def.promise();  
@@ -32,17 +31,15 @@ ATC.prototype.buttonSave = function(){
   var showSaving = function(){
     var def = $.Deferred();
     setTimeout(function() {
-      if(!saveButton.is(".no-save")){
-        saveButton.removeClass("unsaved saved").addClass("saving");
-        editWindow.addClass("saving");   
-        editor.setOptions({
-          readOnly: true,
-          highlightActiveLine: false,
-          highlightGutterLine: false
-        });
-        editor.renderer.$cursorLayer.element.style.opacity=0
-        editor.textInput.getElement().disabled=true
-      }
+      saveButton.removeClass("no-save unsaved saved").addClass("saving");
+      editArea.addClass("saving");
+      editor.setOptions({
+        readOnly: true,
+        highlightActiveLine: false,
+        highlightGutterLine: false
+      });
+      editor.renderer.$cursorLayer.element.style.opacity=0
+      editor.textInput.getElement().disabled=true
       def.resolve();
     }, 0);
     return def.promise();  
@@ -51,30 +48,46 @@ ATC.prototype.buttonSave = function(){
   var showSaved = function(){
     var def = $.Deferred();
     setTimeout(function() {
-      if(!saveButton.is(".no-save")){
-        saveButton.removeClass("unsaved saving").addClass("saved");  
-        editWindow.removeClass("saving");
-        editor.setOptions({
-          readOnly: false,
-          highlightActiveLine: true,
-          highlightGutterLine: true
-        });
-        editor.renderer.$cursorLayer.element.style.opacity=1;
-        editor.textInput.getElement().disabled=false;
-        editor.focus();
-      }
+      saveButton.removeClass("no-save unsaved saving").addClass("saved");  
+      editArea.removeClass("saving");
+      editor.setOptions({
+        readOnly: false,
+        highlightActiveLine: true,
+        highlightGutterLine: true
+      });
+      editor.renderer.$cursorLayer.element.style.opacity=1;
+      editor.textInput.getElement().disabled=false;
+      editor.focus();
       def.resolve();
     }, 0);
     return def.promise();  
   };
+  
+  var showNoSave = function(){
+    var def = $.Deferred();
+    setTimeout(function() {
+      saveButton.removeClass("unsaved saving saved").addClass("no-save");  
+      def.resolve();
+    }, 0);
+    return def.promise(); 
+  };
  
- 
-  var UIsave = function(){  
-    showSaving().then(asyncSave).then(showSaved).then(atc.success, atc.error);
+  var UIsave = function(){
+    if(mode === "none")
+      showNoSave();
+    else if(mode === "local")
+      showSaving().then(asyncSave).then(showSaved).then(atc.success, atc.error);
   };
 
-  editor.on("change", showSave);
-  $(".atc > .header div").click(showSave);
+  var UIenableSave = function(){
+    if(mode === "none")
+      showNoSave();
+    else if(mode === "local")
+      showSave();
+  };
+
+  editor.on("change", UIenableSave);
+  $(".atc > .header div").click(UIenableSave);
   
   $(document).keydown(function(e) {
     var key = e.which || e.charCode || e.keyCode;

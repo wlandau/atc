@@ -32,7 +32,7 @@
   
   var initializePanels = function(atc){
     $(".atc > .header div, .panel").removeClass("open");
-    for(panel in atc.panels)
+    for(var panel in atc.panels)
       if(atc.panels[panel])
         $(".atc > .header ." + panel + ", .panel." + panel).addClass("open");
     fitPanels();
