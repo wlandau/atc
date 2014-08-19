@@ -19,5 +19,13 @@
     };
     
     this.configure(args);
+    
+    this.success = function(){
+//      console.log("ATC success.");
+    };
+    
+    this.error = function(){
+      console.log("ATC error.");
+    }
   };
 })(undefined);

@@ -33,7 +33,7 @@
 .unsaved:before {
   content: "Save";
 }
-.saving:before{
+.saving.save:before{
   content: "Saving...";
 }
 

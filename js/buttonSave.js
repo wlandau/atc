@@ -1,7 +1,8 @@
 ATC.prototype.buttonSave = function(){
   var atc = this,
       editor = ace.edit("editor"),
-      mode = this.storage.mode;
+      editWindow = $(".ace_content"),
+      mode = this.storage.mode,
       saveButton = $(".save");
 
   if(mode === "local")
@@ -9,25 +10,67 @@ ATC.prototype.buttonSave = function(){
   else if(mode === "none")
     saveButton.addClass("no-save");
 
+  var asyncSave = function(){
+    var def = $.Deferred();
+    setTimeout(function() {      
+      atc.save();
+      def.resolve();
+    }, 0);
+    return def.promise();    
+  }
+
   var showSave = function(){
-    if(!saveButton.is(".no-save"))
-      saveButton.removeClass("saving saved").addClass("unsaved");  
+    var def = $.Deferred();
+    setTimeout(function() {
+      if(!saveButton.is(".no-save"))
+        saveButton.removeClass("saving saved").addClass("unsaved");  
+      def.resolve();
+    }, 0);
+    return def.promise();  
   };
 
   var showSaving = function(){
-    if(!saveButton.is(".no-save"))
-      saveButton.removeClass("unsaved saved").addClass("saving");
+    var def = $.Deferred();
+    setTimeout(function() {
+      if(!saveButton.is(".no-save")){
+        saveButton.removeClass("unsaved saved").addClass("saving");
+        editWindow.addClass("saving");   
+        editor.setOptions({
+          readOnly: true,
+          highlightActiveLine: false,
+          highlightGutterLine: false
+        });
+        editor.renderer.$cursorLayer.element.style.opacity=0
+        editor.textInput.getElement().disabled=true
+      }
+      def.resolve();
+    }, 0);
+    return def.promise();  
   };
 
   var showSaved = function(){
-    if(!saveButton.is(".no-save"))
-      saveButton.removeClass("unsaved saving").addClass("saved");  
+    var def = $.Deferred();
+    setTimeout(function() {
+      if(!saveButton.is(".no-save")){
+        saveButton.removeClass("unsaved saving").addClass("saved");  
+        editWindow.removeClass("saving");
+        editor.setOptions({
+          readOnly: false,
+          highlightActiveLine: true,
+          highlightGutterLine: true
+        });
+        editor.renderer.$cursorLayer.element.style.opacity=1;
+        editor.textInput.getElement().disabled=false;
+        editor.focus();
+      }
+      def.resolve();
+    }, 0);
+    return def.promise();  
   };
-
+ 
+ 
   var UIsave = function(){  
-    showSaving()
-    setTimeout(function(){atc.save()}, 0);
-    setTimeout(function(){showSaved()}, 0);
+    showSaving().then(asyncSave).then(showSaved).then(atc.success, atc.error);
   };
 
   editor.on("change", showSave);
@@ -35,7 +78,10 @@ ATC.prototype.buttonSave = function(){
   
   $(document).keydown(function(e) {
     var key = e.which || e.charCode || e.keyCode;
-    if((e.ctrlKey || e.metaKey) && (key === 83 || key === 115)){
+
+    if(key === 8 || key === 46){
+      e.preventDefault();
+    } else if((e.ctrlKey || e.metaKey) && (key === 83 || key === 115)){
       e.preventDefault();
       if(saveButton.is(".unsaved"))
         UIsave();

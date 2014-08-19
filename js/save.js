@@ -1,4 +1,5 @@
 ;(function(window, ATC){
+  
   var retrieveLocally = function(atc){
     atc.configure(JSON.parse(localStorage.getItem("atc")));
     
@@ -9,7 +10,7 @@
 
   ATC.prototype.retrieve = function(){
     if(this.storage.mode === "local")
-      retrieveLocally(this);     
+      retrieveLocally(this);  
   };
 
   var saveLocally = function(atc){
