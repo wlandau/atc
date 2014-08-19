@@ -25,7 +25,7 @@
   content: "Merge selection";
 }
 .no-save:before{
-  content: "Saving disabled";
+  content: "No saving";
 }
 .saved:before {
   content: "Saved";
