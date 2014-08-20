@@ -12,7 +12,7 @@ ATC.prototype.showStorage = function(){
     else
       saveButton.addClass(atc.storage.status);
       
-    if(status === "saving"){
+    if(atc.storage.status === "saving"){
       editArea.addClass("saving");
       editor.setOptions({
         readOnly: true, 
@@ -21,7 +21,7 @@ ATC.prototype.showStorage = function(){
       });
       editor.renderer.$cursorLayer.element.style.opacity=0
       editor.textInput.getElement().disabled=true
-    } else if(status === "saved"){
+    } else if(atc.storage.status === "saved"){
       editArea.removeClass("saving");
       editor.setOptions({
         readOnly: false,

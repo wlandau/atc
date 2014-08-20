@@ -1,3 +1,3 @@
 ATC.prototype.login = function(){
-  console.log("logged in");
+  console.log("Login not available yet.");
 };
