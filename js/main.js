@@ -1,4 +1,4 @@
 $(document).ready(function(){
   atc = new ATC();
-  atc.load();
+  atc.begin();
 });
