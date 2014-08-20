@@ -1,5 +1,6 @@
 ATC.prototype.buttonSave = function(){
-  var atc = this;
+  var atc = this,
+      saveButton = $(".save");
 
   var asyncSave = function(){
     var def = $.Deferred();
@@ -12,6 +13,9 @@ ATC.prototype.buttonSave = function(){
   }
 
   var saveEvent = function(){
+    if(!saveButton.is(".unsaved"))
+      return;
+      
     if(atc.storage.mode === "no-save") {
       atc.showStorage();
     } else if(atc.storage.status === "unsaved") {
@@ -37,9 +41,9 @@ ATC.prototype.buttonSave = function(){
   };
 
   ace.edit("editor").on("change", enableSaveEvent);
-  $(".atc > .header div").on("click", enableSaveEvent);
+  $(".atc > .header div:not(.save)").on("click", enableSaveEvent);
   $(document).on("keydown", function(e){keyHandlerEvent(e)});
-  $(".save").on("click", saveEvent);
+  saveButton.on("click", saveEvent);
 
   atc.showStorage();  
 };
