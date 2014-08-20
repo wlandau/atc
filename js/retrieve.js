@@ -1,6 +1,6 @@
 ;(function(localStorage, ATC){
   
-  ATC.prototype.retrieve = function(){
+  ATC.prototype.retrieveLocally = function(){
     var obj = JSON.parse(localStorage.getItem("atc"));    
 
     if(obj !== null){

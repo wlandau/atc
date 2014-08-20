@@ -4,7 +4,7 @@ ATC.prototype.begin = function(){
   var step1 = function() {
     var def = $.Deferred();
     setTimeout(function() {
-      atc.retrieve();
+      atc.retrieveLocally();
       def.resolve();
     }, 0);
     return def.promise();
