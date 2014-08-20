@@ -15,6 +15,8 @@ ATC.prototype.load = function(){
     setTimeout(function() {
       atc.pluginACE();
       atc.buttons();
+      if(atc.storage.mode === "server")
+        atc.login();
       def.resolve();
     }, 0);
     return def.promise();
