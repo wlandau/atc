@@ -1,0 +1,1 @@
+This project is called Account Traffic Control, ATC for short. It's a personal accounting web app that I didn't finish because I discovered simple.com in the middle of working on it. Still, I'm keeping it on GitHub because I learned a TON about Javascipt and jQuery from it. Plus, I like the color scheme, layout of panels, and use of the Ace code editor.
